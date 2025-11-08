@@ -13,8 +13,8 @@ function App() {
     <div>
       <Nav />
       <input placeholder="Customer Name" value={customerName} onChange={e => setCustomerName(e.target.value)} />
-      <Stationery value={setStationeryTotal} />
-      <Printing value={setPrintingTotal} />
+      <Stationery onTotal={setStationeryTotal} />
+      <Printing onTotal={setPrintingTotal} />
       <Invoice name={customerName} stationeryTotal={stationeryTotal} printingTotal={printingTotal} />
     </div>
   )
