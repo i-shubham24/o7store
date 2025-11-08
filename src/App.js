@@ -1,22 +1,22 @@
-import './App.css';
-import Nav from './components/nav.jsx';
-import Stationary from './components/stationary.jsx';
-import Printing from './components/printing.jsx';
-import Invoice from './components/invoice.jsx'; 
-import { Routes } from 'react-router-dom';
+import React, { useState } from "react"
+import Nav from "./nav"
+import Stationery from "./stationery"
+import Printing from "./printing"
+import Invoice from "./invoice"
 
 function App() {
-  return (
-    <div className="App">
-      <Nav/>
-      <Routes>
-        <route path="/" element={<Home/>}/>
-        <route path="/stationary" element={<Stationary/>}/> 
-        <route path="/printing" element={<Printing/>}/>
-        <route path="/invoice" element={<Invoice/>}/>
-      </Routes>
-    </div>
-  );
-}
+  const [stationeryTotal, setStationeryTotal] = useState(0)
+  const [printingTotal, setPrintingTotal] = useState(0)
+  const [customerName, setCustomerName] = useState("")
 
-export default App;
+  return (
+    <div>
+      <Nav />
+      <input placeholder="Customer Name" value={customerName} onChange={e => setCustomerName(e.target.value)} />
+      <Stationery onTotal={setStationeryTotal} />
+      <Printing onTotal={setPrintingTotal} />
+      <Invoice name={customerName} stationeryTotal={stationeryTotal} printingTotal={printingTotal} />
+    </div>
+  )
+}
+export default App
