@@ -1,23 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import Nav from './components/nav.jsx';
+import Stationary from './components/stationary.jsx';
+import Printing from './components/printing.jsx';
+import Invoice from './components/invoice.jsx'; 
+import { Routes } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Nav/>
+      <Routes>
+        <route path="/" element={<Home/>}/>
+        <route path="/stationary" element={<Stationary/>}/> 
+        <route path="/printing" element={<Printing/>}/>
+        <route path="/invoice" element={<Invoice/>}/>
+      </Routes>
     </div>
   );
 }
