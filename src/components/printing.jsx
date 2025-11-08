@@ -9,7 +9,6 @@ function Printing({ onTotal }) {
     const p = parseInt(pages)
     if (!p) return
     const price = type === "bw" ? 5 : 10
-    const fee = urgent ? 50 : 0
     const subtotal = p * price + fee
     const discount = p > 100 ? p * price * 0.1 : 0
     const total = subtotal - discount
@@ -30,7 +29,6 @@ function Printing({ onTotal }) {
         <div>
           <p>Pages: {result.p}</p>
           <p>Type: {result.type}</p>
-          <p>Urgent Fee: ₹{result.fee}</p>
           <p>Subtotal: ₹{result.subtotal}</p>
           <p>Discount: ₹{result.discount}</p>
           <p>Total: ₹{result.total}</p>
