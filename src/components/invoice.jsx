@@ -5,7 +5,7 @@ function Invoice({ name, stationeryTotal, printingTotal }) {
   const tax = subtotal * 0.1
   const delivery = 50
   const total = subtotal + tax + delivery
-  const id = Math.floor(Math.random() * 100000)
+  const id = Math.random()
 
   return (
     <div>
