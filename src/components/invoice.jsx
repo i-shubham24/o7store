@@ -12,7 +12,6 @@ function Invoice({ name, stationeryTotal, printingTotal }) {
       <h3>Invoice</h3>
       <p>Order ID: {id}</p>
       <p>Name: {name}</p>
-      <p>Date: {date}</p>
       <p>Stationery Total: ₹{stationeryTotal}</p>
       <p>Printing Total: ₹{printingTotal}</p>
       <p>Tax (10%): ₹{tax}</p>
